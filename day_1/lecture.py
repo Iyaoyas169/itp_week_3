@@ -25,24 +25,36 @@
 import openpyxl
 
 #Assign your .xlsx file to a variable
-filename = "day_1\lecture.xlsx"
+# filename = "path/to/your/excel"
+filename = "itp_week_3\day_1\lecture.xlsx"
 wb = openpyxl.load_workbook(filename) #returns a Workbook object.
-# my_workbook = openpyxl.load_workbook('lecture.xlsx')
-
-#use the 'type' method on the new variable to verify what kind of data type you are working with
+print(type(wb))
+# my_workbook = openpyxl.load_workbook('example.xlsx')
+# #use the 'type' method on the new variable to verify what kind of data type you are working with
 # type(my_workbook) # Result-->  <class 'openpyxl.workbook.workbook.Workbook'>
-
-
+sheet_name = wb.sheetnames
+print(sheet_name)
 
 # #Each Excel file can have multiple sheets, which each contain many rows, columns and cells.  You must specify which sheet you would like to manipulate.
 # get_sheet_names() #and
 # get_sheet_by_name() #help get Worksheet objects.
 
 # my_workbook.get_sheet_names()  # Result-->  ['Sheet1', 'Sheet2', 'Sheet3']
+my_sheet = wb["Sheet1"]
+print(my_sheet)
 
 # my_sheet = my_workbook.get_sheet_by_name('Sheet 1')
 # #verify
 # type(my_sheet)  # Result-->  <class 'openpyxl.worksheet.worksheet.Worksheet'>
+apple_cell = my_sheet["B1"]
+print(apple_cell.value)
+
+another_cell = my_sheet["B3"]
+print(another_cell.value)
+
+print('Row %s, Column %s is %s' %(another_cell.row, another_cell.column, another_cell.value))
+# Another method to use below:
+print('COORDINATE %s is %s' %(another_cell.coordinate, another_cell.value))
 
 # # Cell objects have a "value" member variable with the content of that cell.
 # # The square brackets in sheet['A1'] get Cell objects.
