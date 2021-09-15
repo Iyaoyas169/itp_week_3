@@ -34,9 +34,9 @@ os.path.isdir() #return True if they were passed a filename or file path.
 import openpyxl
 wb = openpyxl.Workbook()
 #Review--> Determine the names of the sheets in the Excel file using the .get_sheet_names() function imported from openpyxl
-wb.get_sheet_names() # Result -->  ['Sheet']
+wb.sheetnames # Result -->  ['Sheet']
 #Notice the correllation between lines 37 and 39 ^^^
-my_sheet = wb.get_sheet_by_name('Sheet1')
+my_sheet = wb['Sheet1']
 
 #How to create a NEW, EMPTY Excel document:
 from openpyxl import Workbook

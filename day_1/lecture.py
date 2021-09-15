@@ -56,41 +56,41 @@ print('Row %s, Column %s is %s' %(another_cell.row, another_cell.column, another
 # Another method to use below:
 print('COORDINATE %s is %s' %(another_cell.coordinate, another_cell.value))
 
-# # Cell objects have a "value" member variable with the content of that cell.
-# # The square brackets in sheet['A1'] get Cell objects.
-# # The cell() method also returns a Cell object from a sheet.
-# my_sheet['A1'] #will return the CELL OBJECT (NOT the value you see in the cell) created by the intersection of the first column and the first row.  The reult of sheet['A1'] will actually be:
-#     # Result -->  <Cell Sheet1.A1>
-# #so we must ASSIGN IT TO A VARIABLE before we can work with it.
-# my_cell = sheet['A1']
-# my_cell.value() # Result --> the value of the A1 cell
+# Cell objects have a "value" member variable with the content of that cell.
+# The square brackets in sheet['A1'] get Cell objects.
+# The cell() method also returns a Cell object from a sheet.
+my_sheet['A1'] #will return the CELL OBJECT (NOT the value you see in the cell) created by the intersection of the first column and the first row.  The reult of sheet['A1'] will actually be:
+    # Result -->  <Cell Sheet1.A1>
+#so we must ASSIGN IT TO A VARIABLE before we can work with it.
+my_cell = sheet['A1']
+my_cell.value() # Result --> the value of the A1 cell
 
-# #Don't forget to convert the values to a string if you are working with strings
-# str(my_cell.value)
-# str(my_sheet['A1'].value)
+#Don't forget to convert the values to a string if you are working with strings
+str(my_cell.value)
+str(my_sheet['A1'].value)
 
-# #You can also access cell values using the .cell() method and passing arguments for the column and row:
-# my_sheet.cell(row=1, column=2) # Result --> <Cell Sheet1.B1>
-
-
-# #Python can be used to loop through the cells on your spreadsheet and manipulate data automatically.
-# for i in range(1, 8):
-#     print(i, my_sheet.cell(row = i, column =2).value)
-# #The code may be difficult to understand at first, but notice that in 'row = i', the 'i' will increase by 1 until it reaches 8, thus printing out each value in column 2.  The first 'i', after the 'print(' is to show the correlation between 'i' and row being printed.
+#You can also access cell values using the .cell() method and passing arguments for the column and row:
+my_sheet.cell(row=1, column=2) # Result --> <Cell Sheet1.B1>
 
 
-# # READ DATA
+#Python can be used to loop through the cells on your spreadsheet and manipulate data automatically.
+for i in range(1, 8):
+    print(i, my_sheet.cell(row = i, column =2).value)
+#The code may be difficult to understand at first, but notice that in 'row = i', the 'i' will increase by 1 until it reaches 8, thus printing out each value in column 2.  The first 'i', after the 'print(' is to show the correlation between 'i' and row being printed.
 
-# # WRITE TO A DATA
 
-# # UPDATE A SPREADSHEET
+# READ DATA
 
-# # SET UP A DATA STRUCTURE WITH THE UPDATED INFORMATION
+# WRITE TO A DATA
 
-# # FORMULAS
+# UPDATE A SPREADSHEET
 
-# # OTHER FUNCTIONALITIES
+# SET UP A DATA STRUCTURE WITH THE UPDATED INFORMATION
 
-# # SUMMARY
+# FORMULAS
+
+# OTHER FUNCTIONALITIES
+
+# SUMMARY
 
 
